@@ -1,0 +1,30 @@
+Dundamentos Data Access
+
+
+-Adicionar um package digitar no terminal:
+    dotnet add package nomeDoPackage
+
+
+-Remover package:
+    dotnet remove package nomeDoPackage
+
+
+-Pacote para acesso de dados no .NET:
+    Microsoft.Data.SqlClient (instala a versão atual)
+    Microsoft.Data.SqlClient --version 2.1.3 (instala a versão desejada)
+
+
+-Para gerenciar a connection com banco:
+    Para não correr o risco de deixar a connection aberta no banco de dados usaro using()
+
+    using (var connection = new SqlConnection(connectionString))
+    {
+        connection.Open();
+        Console.WriteLine("Conectado");
+
+        using (var command = new SqlCommand())
+        {
+            command.Connection = connection;
+        }
+    }
+    
