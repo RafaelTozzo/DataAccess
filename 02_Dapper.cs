@@ -435,9 +435,5 @@ namespace BaltaDataAccess
 
             }
         }
-
-
-
-
     }
 }
